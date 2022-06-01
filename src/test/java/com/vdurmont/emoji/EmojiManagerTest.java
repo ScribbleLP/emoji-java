@@ -45,15 +45,15 @@ public class EmojiManagerTest {
   }
 
   @Test
-  public void getForTag_returns_the_eu_emoji_for_same_tag() {
+  public void getForTag_returns_the_spain_emoji_for_same_tag() {
     // GIVEN
 
     // WHEN
-    Set<Emoji> emojis = EmojiManager.getForTag("european union");
+    Set<Emoji> emojis = EmojiManager.getForTag("spain");
 
     // THEN
     assertEquals(1, emojis.size());
-    assertTrue(TestTools.containsEmojis(emojis, "eu"));
+    assertTrue(TestTools.containsEmojis(emojis, "es"));
   }
 
   @Test
@@ -76,7 +76,7 @@ public class EmojiManagerTest {
 
     // THEN
     assertEquals(
-      "smiling face with open mouth and smiling eyes",
+      "grinning face with smiling eyes",
       emoji.getDescription()
     );
   }
@@ -90,7 +90,7 @@ public class EmojiManagerTest {
 
     // THEN
     assertEquals(
-      "smiling face with open mouth and smiling eyes",
+      "grinning face with smiling eyes",
       emoji.getDescription()
     );
   }
@@ -224,7 +224,7 @@ public class EmojiManagerTest {
 
     // THEN
     // We know the number of distinct tags int the...!
-    assertEquals(656, tags.size());
+    assertEquals(447, tags.size());
   }
 
   @Test
@@ -272,6 +272,6 @@ public class EmojiManagerTest {
     String wavingHand = "\uD83D\uDC4B";
     Emoji e = EmojiManager.getByUnicode(wavingHand);
     assertEquals(wavingHand, e.getUnicode());
-    assertEquals("waving hand sign", e.getDescription());
+    assertEquals("waving hand", e.getDescription());
   }
 }
